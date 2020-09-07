@@ -114,6 +114,11 @@
         "templates/app/macos.tmpl/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
         "templates/app/projectName.iml.tmpl",
         "templates/app/pubspec.yaml.tmpl",
+
+        "templates/app/makefile.tmpl",
+        "templates/app/flutter_launcher_icons.yaml.tmpl",
+        "templates/app/flutter_native_splash.yaml.tmpl",
+
         "templates/app/README.md.tmpl",
         "templates/app/test/widget_test.dart.tmpl",
         "templates/app/web/favicon.png.copy.tmpl",

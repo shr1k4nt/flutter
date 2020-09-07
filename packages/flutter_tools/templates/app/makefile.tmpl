@@ -1,0 +1,43 @@
+.DEFAULT: help
+help:
+	@echo ""
+	@echo "help: Prints this help message"
+	@echo "apk: Makes a release apk"
+	@echo "clean: Runs flutter clean"
+	@echo "g3: Deploys the apk to ZY22237FX4"
+	@echo "a40: Deploys the apk to R58M57B3NBJ"
+	@echo "a6: Deploys the apk to 520073dfbce9656b"
+	@echo "format: Formats the code"
+    @echo "pg: Runs pub get"
+    @echo "pu: Runs pub upgrade"
+	@echo ""
+
+apk:
+	flutter build apk --release --split-per-abi --target-platform=android-arm,android-arm64
+
+clean:
+	flutter clean
+
+g3:
+	adb -s ZY22237FX4 install build/app/outputs/apk/release/app-armeabi-v7a-release.apk
+
+a40:
+	adb -s R58M57B3NBJ install build/app/outputs/apk/release/app-arm64-v8a-release.apk
+
+a6:
+	adb -s 520073dfbce9656b install build/app/outputs/apk/app.apk
+
+format:
+	flutter format lib/
+
+pg:
+	flutter pub get
+
+pu:
+	flutter pub upgrade
+
+splash:
+	flutter pub pub run flutter_native_splash:create
+
+launcher:
+	flutter pub run flutter_launcher_icons:main -f flutter_launcher_icons.yaml
